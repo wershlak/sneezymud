@@ -361,6 +361,7 @@ class TBeing : public TThing {
     bodyPartsDamage body_parts[MAX_WEAR];
     attack_mode_t combatMode;      
     int my_garbleFlags;
+    short my_crit = 0;  // crit eq and affects
 
   public:
     factionData faction;
@@ -1544,6 +1545,10 @@ class TBeing : public TThing {
     short getProtection() const;
     void setProtection(short num);
     void addToProtection(short num);
+
+    short getCrit() const;
+    void setCrit(short num);
+    void addToCrit(short num);
 
     int getHeroNum() const {
       return heroNum;

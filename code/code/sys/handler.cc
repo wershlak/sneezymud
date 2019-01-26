@@ -310,6 +310,7 @@ void TBeing::affectModify(applyTypeT loc, long mod, long mod2, uint64_t bitv, bo
     case APPLY_LIGHT:
     case APPLY_SEX:
     case APPLY_CRIT_FREQUENCY:
+      addToCrit(mod);
       return;
     case APPLY_SPELL:
       if (!discArray[mod]) {

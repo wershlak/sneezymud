@@ -1445,6 +1445,22 @@ sstring TBeing::displayExp() const
   return xp_sstring;
 }
 
+short TBeing::getCrit() const
+{
+  return my_crit;
+}
+
+void TBeing::setCrit(short num)
+{
+  my_crit = num;
+}
+
+void TBeing::addToCrit(short num)
+{
+  my_crit = num + my_crit;
+}
+
+
 short TBeing::getProtection() const
 {
   return my_protection;

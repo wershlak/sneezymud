@@ -495,7 +495,7 @@ void TBeing::critHitEqDamage(TBeing *v, TThing *obj, int eqdam)
 int TBeing::critSuccessChance(TBeing *v, TThing *weapon, wearSlotT *part_hit, spellNumT wtype, int *dam, int mod)
 {
   int crit_num = 0, dicenum, crit_chance;
-  affectedData *adp;
+  // affectedData *adp;
 
   if (isAffected(AFF_ENGAGER))
     return FALSE;
@@ -567,11 +567,13 @@ int TBeing::critSuccessChance(TBeing *v, TThing *weapon, wearSlotT *part_hit, sp
   }
 
   // if affected by APPLY_CRIT_FREQUENCY then multiply out by modifier
-  for (adp = affected; adp; adp = adp->next) {
-    if (adp->location == APPLY_CRIT_FREQUENCY) {
-      crit_chance *= adp->modifier;
-    }
-  }
+  //for (adp = affected; adp; adp = adp->next) {
+  //  if (adp->location == APPLY_CRIT_FREQUENCY) {
+  //    crit_chance *= adp->modifier;
+  //  }
+  //}
+
+	crit_chance *= getCrit();
 
   if(mod == -1){
     // check the roll versus the chance
